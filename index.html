@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe APP by "Aman"</title>
+    <!-- Adding Daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/f82ce12b60.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS File -->
+     <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="bg-gray-500">
+      <nav class="w-10/12 mx-auto py-2">
+        <div class="navbar bg-gray-500 flex flex-col md:flex-row gap-5">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-white text-xl md:text-2xl"
+              >RECIPE YOU WANT🍲</a
+            >
+          </div>
+          <div class="flex-none gap-2">
+            <div class="form-control">
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search"
+                class="input input-bordered md:w-56"
+              />
+            </div>
+            <button
+              id="searchBtn"
+              class="btn bg-purple-700 hover:bg-purple-500 border-none text-white"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="w-[90%] mx-auto py-10">
+      <!-- Categories Section -->
+       <section id="category-container" class="w-4/6 gap-4 mx-auto pb-10 grid md:grid-cols-7 grid-cols-3"></section>
+      <section id="search-msg">
+        <h1 class="text-center text-3xl font-bold shadow-md">
+          Search For Your Favorite Recipes Here😋
+        </h1>
+      </section>
+      <!-- Like Btn Clicked Section -->
+      <section id="liked-section" class="w-10/12 mx-auto py-5 hidden">
+        <h1 class="text-center italic font-bold text-xl">You have Liked those things below 👇</h1>
+        <div>
+          <div id="liked-container" class="grid grid-cols-4 gap-5"></div>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <!-- Main Section -->
+      <section
+        id="recipe-container"
+        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"
+      ></section>
+
+      <!-- Details Modal -->
+      <section>
+        <button class="btn hidden" onclick="my_modal_1.showModal()">open modal</button>
+        <dialog id="my_modal_1" class="modal bg-gray-300">
+          <div class="modal-box">
+            <div id="modal-content"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn btn-success hover:bg-red-500 hover:text-white">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+    </main>
+
+    <!-- JS Adding -->
+    <script src="./js/script.js"></script>
+    <script src="./js/details.js"></script>
+    <script src="./js/likeBtn.js"></script>
+    <script src="./js/categories.js"></script>
+  </body>
+</html>
